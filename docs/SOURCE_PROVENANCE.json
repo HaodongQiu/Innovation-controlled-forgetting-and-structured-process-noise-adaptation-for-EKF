@@ -1,0 +1,49 @@
+{
+  "filter_source": "MSSP_independent_truth_FOH_ODE45_MC100/independent_filter.m",
+  "filter_source_sha256": "e81be6b19c54a0c96d956d7e55c0ff5944d4f93c167e656b62350d166223557a",
+  "filter_changes": "public function name; descriptive comments; passive state/SD/NIS/alpha/timing capture; numerical update unchanged",
+  "data": [
+    {
+      "file": "data/models/Pirelli39_model.mat",
+      "source": "MSSP_fixed080_4DOF_20DOF_39DOF_MC100_final10_stiffness/inputs/Pirelli39_model.mat",
+      "source_sha256": "bdd5abd6c0fa3e0c84375d8a23f4e0ce3447da1cca112f56c310ddef0b0ad0da",
+      "transformation": "unchanged"
+    },
+    {
+      "file": "data/cases/Pirelli39_cases.mat",
+      "source": "MSSP_fixed080_4DOF_20DOF_39DOF_MC100_final10_stiffness/inputs/Pirelli39_cases.mat",
+      "source_sha256": "9e5555d147189a11b7824edd9c3ec088869c2aa013f390cf3ec0509825bb4fa6",
+      "transformation": "retain case design and seeds; omit redundant simulation/prior arrays"
+    },
+    {
+      "file": "data/models/ASCE4_model.mat",
+      "source": "MSSP_fixed080_4DOF_20DOF_39DOF_MC100_final10_stiffness/inputs/ASCE4_model.mat",
+      "source_sha256": "21f358dc3ef76536759a3d6baeb41aabde9ee839b0c9c2aab21eee4a20be4e08",
+      "transformation": "unchanged"
+    },
+    {
+      "file": "data/cases/ASCE4_cases.mat",
+      "source": "MSSP_fixed080_4DOF_20DOF_39DOF_MC100_final10_stiffness/inputs/ASCE4_cases.mat",
+      "source_sha256": "f121c57c2e1b417418cf1634af0b27126c8a46f1cbc8ae2585cff6f3677e0197",
+      "transformation": "retain case design and seeds; omit redundant simulation/prior arrays"
+    },
+    {
+      "file": "data/ElCentro_time_history_dt0001.mat",
+      "source": "ElCentro_time_history_dt0001.mat",
+      "source_sha256": "766766b20c54ac1b6007352037a779252c46ce893a0b8ffed3385c57dfdd925e",
+      "transformation": "unchanged"
+    },
+    {
+      "file": "data/reference/Pirelli_reference_mass_stiffness.mat",
+      "source": "KyMy.mat",
+      "source_sha256": "122a3c45b741485ccaa355d5e2f0f16453e13204184f3a2023eebe48f44e8a31",
+      "transformation": "unchanged; descriptive filename only"
+    },
+    {
+      "file": "data/reference/Pirelli_equivalent_story_stiffness.mat",
+      "source": "K_final_Mode1.mat",
+      "source_sha256": "0599873d055be356bd7476a0d574e313b7277d455c37af169e22066e48132b30",
+      "transformation": "unchanged; descriptive filename only"
+    }
+  ]
+}

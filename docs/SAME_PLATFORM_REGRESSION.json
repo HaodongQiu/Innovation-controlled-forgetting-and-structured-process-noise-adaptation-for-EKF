@@ -1,0 +1,47 @@
+{
+  "MATLAB_version": "23.2.0.2515942 (R2023b) Update 7",
+  "records": [
+    {
+      "method": "U-fixed",
+      "samples": 6200,
+      "scaled_final_state_difference": 0,
+      "error_energy_relative_difference": 0,
+      "passed": true
+    },
+    {
+      "method": "U-dynamic",
+      "samples": 6200,
+      "scaled_final_state_difference": 0,
+      "error_energy_relative_difference": 0,
+      "passed": true
+    },
+    {
+      "method": "M1-dynamic",
+      "samples": 6200,
+      "scaled_final_state_difference": 0,
+      "error_energy_relative_difference": 0,
+      "passed": true
+    },
+    {
+      "method": "M2-dynamic",
+      "samples": 6200,
+      "scaled_final_state_difference": 0,
+      "error_energy_relative_difference": 0,
+      "passed": true
+    },
+    {
+      "method": "M12-fixed",
+      "samples": 6200,
+      "scaled_final_state_difference": 0,
+      "error_energy_relative_difference": 0,
+      "passed": true
+    },
+    {
+      "method": "M12-dynamic",
+      "samples": 6200,
+      "scaled_final_state_difference": 0,
+      "error_energy_relative_difference": 0,
+      "passed": true
+    }
+  ]
+}

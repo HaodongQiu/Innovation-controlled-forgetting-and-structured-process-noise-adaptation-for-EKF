@@ -1,0 +1,233 @@
+{
+  "generated_pdfs": 22,
+  "all_single_page_and_text_extractable": true,
+  "rendered_with": "Poppler pdftoppm",
+  "visual_review_passed": true,
+  "data_used_for_plot_smoke_test": "Pirelli case 1 only; not a 100-case ensemble",
+  "KDE_sample_count_per_story": 94,
+  "KDE_sampling_seconds": [
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103
+  ],
+  "bandwidths": [
+    0.03,
+    7.3e-06,
+    2.1e-05,
+    0.00036
+  ],
+  "units": [
+    "%",
+    "m",
+    "m/s",
+    "m/s^2"
+  ],
+  "PDFs": [
+    {
+      "file": "acceleration_KDE_box_central.pdf",
+      "pages": 1,
+      "text_extractable": true
+    },
+    {
+      "file": "acceleration_KDE_box_full.pdf",
+      "pages": 1,
+      "text_extractable": true
+    },
+    {
+      "file": "acceleration_window_CDF.pdf",
+      "pages": 1,
+      "text_extractable": true
+    },
+    {
+      "file": "damaged_stiffness_ratio.pdf",
+      "pages": 1,
+      "text_extractable": true
+    },
+    {
+      "file": "damaged_unchanged_stiffness_CDF.pdf",
+      "pages": 1,
+      "text_extractable": true
+    },
+    {
+      "file": "displacement_KDE_box_central.pdf",
+      "pages": 1,
+      "text_extractable": true
+    },
+    {
+      "file": "displacement_KDE_box_full.pdf",
+      "pages": 1,
+      "text_extractable": true
+    },
+    {
+      "file": "displacement_window_CDF.pdf",
+      "pages": 1,
+      "text_extractable": true
+    },
+    {
+      "file": "early_acceleration_nrmse_pct_CDF.pdf",
+      "pages": 1,
+      "text_extractable": true
+    },
+    {
+      "file": "endpoint_stiffness_ratio.pdf",
+      "pages": 1,
+      "text_extractable": true
+    },
+    {
+      "file": "final_acceleration_nrmse_pct_CDF.pdf",
+      "pages": 1,
+      "text_extractable": true
+    },
+    {
+      "file": "method_stiffness_CDF.pdf",
+      "pages": 1,
+      "text_extractable": true
+    },
+    {
+      "file": "stiffness_KDE_box_central.pdf",
+      "pages": 1,
+      "text_extractable": true
+    },
+    {
+      "file": "stiffness_KDE_box_full.pdf",
+      "pages": 1,
+      "text_extractable": true
+    },
+    {
+      "file": "story_stiffness_NRMSE.pdf",
+      "pages": 1,
+      "text_extractable": true
+    },
+    {
+      "file": "velocity_KDE_box_central.pdf",
+      "pages": 1,
+      "text_extractable": true
+    },
+    {
+      "file": "velocity_KDE_box_full.pdf",
+      "pages": 1,
+      "text_extractable": true
+    },
+    {
+      "file": "velocity_window_CDF.pdf",
+      "pages": 1,
+      "text_extractable": true
+    },
+    {
+      "file": "case_0001_NIS_alpha.pdf",
+      "pages": 1,
+      "text_extractable": true
+    },
+    {
+      "file": "case_0001_story_09.pdf",
+      "pages": 1,
+      "text_extractable": true
+    },
+    {
+      "file": "case_0001_story_12.pdf",
+      "pages": 1,
+      "text_extractable": true
+    },
+    {
+      "file": "case_0001_story_30.pdf",
+      "pages": 1,
+      "text_extractable": true
+    }
+  ],
+  "plot_only_fixes": [
+    "CDFs display a jump for one-case trial runs",
+    "Disable minor grids",
+    "Trim invisible KDE outline tails without excluding observations"
+  ]
+}

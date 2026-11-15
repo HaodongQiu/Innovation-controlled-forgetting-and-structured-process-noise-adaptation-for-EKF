@@ -1,0 +1,153 @@
+{
+  "MATLAB_version": "23.2.0.2515942 (R2023b) Update 7",
+  "records": [
+    {
+      "model": "Pirelli39",
+      "method": "U-fixed",
+      "case_id": 1,
+      "inputs_preserved": true,
+      "archive_close": false,
+      "success_matches_archive": true,
+      "scaled_final_state_difference": 0.0270808798355046,
+      "initial_P_relative_difference": 0,
+      "max_final_stiffness_NRMSE_difference_pp": 1.9717771390252672,
+      "max_final_response_NRMSE_difference_pp": 0.93652383344509593
+    },
+    {
+      "model": "Pirelli39",
+      "method": "U-dynamic",
+      "case_id": 1,
+      "inputs_preserved": true,
+      "archive_close": false,
+      "success_matches_archive": true,
+      "scaled_final_state_difference": 0.05622936748811605,
+      "initial_P_relative_difference": 0,
+      "max_final_stiffness_NRMSE_difference_pp": 5.9223355553513475,
+      "max_final_response_NRMSE_difference_pp": 2.8091837061450784
+    },
+    {
+      "model": "Pirelli39",
+      "method": "M1-dynamic",
+      "case_id": 1,
+      "inputs_preserved": true,
+      "archive_close": false,
+      "success_matches_archive": true,
+      "scaled_final_state_difference": 0.038043297307253046,
+      "initial_P_relative_difference": 0,
+      "max_final_stiffness_NRMSE_difference_pp": 3.9602532976215712,
+      "max_final_response_NRMSE_difference_pp": 11.483937240524927
+    },
+    {
+      "model": "Pirelli39",
+      "method": "M2-dynamic",
+      "case_id": 1,
+      "inputs_preserved": true,
+      "archive_close": true,
+      "success_matches_archive": true,
+      "scaled_final_state_difference": 1.2750911437819923E-13,
+      "initial_P_relative_difference": 0,
+      "max_final_stiffness_NRMSE_difference_pp": 7.9927731100326582E-12,
+      "max_final_response_NRMSE_difference_pp": 1.7386980744049652E-11
+    },
+    {
+      "model": "Pirelli39",
+      "method": "M12-fixed",
+      "case_id": 1,
+      "inputs_preserved": true,
+      "archive_close": true,
+      "success_matches_archive": true,
+      "scaled_final_state_difference": 1.7597034940308731E-13,
+      "initial_P_relative_difference": 0,
+      "max_final_stiffness_NRMSE_difference_pp": 4.2289505230996838E-12,
+      "max_final_response_NRMSE_difference_pp": 8.08242361927114E-12
+    },
+    {
+      "model": "Pirelli39",
+      "method": "M12-dynamic",
+      "case_id": 1,
+      "inputs_preserved": true,
+      "archive_close": true,
+      "success_matches_archive": true,
+      "scaled_final_state_difference": 9.64783808399261E-14,
+      "initial_P_relative_difference": 0,
+      "max_final_stiffness_NRMSE_difference_pp": 7.7239048490440609E-12,
+      "max_final_response_NRMSE_difference_pp": 1.4765078049094882E-11
+    },
+    {
+      "model": "ASCE4",
+      "method": "U-fixed",
+      "case_id": 1,
+      "inputs_preserved": true,
+      "archive_close": false,
+      "success_matches_archive": true,
+      "scaled_final_state_difference": 4.2681212753933944E-12,
+      "initial_P_relative_difference": 0,
+      "max_final_stiffness_NRMSE_difference_pp": 4.5327830378028011E-10,
+      "max_final_response_NRMSE_difference_pp": 0.15008544921875
+    },
+    {
+      "model": "ASCE4",
+      "method": "U-dynamic",
+      "case_id": 1,
+      "inputs_preserved": true,
+      "archive_close": false,
+      "success_matches_archive": true,
+      "scaled_final_state_difference": 2.4184979561682972E-13,
+      "initial_P_relative_difference": 0,
+      "max_final_stiffness_NRMSE_difference_pp": 2.48174814032609E-11,
+      "max_final_response_NRMSE_difference_pp": 0.0060577392578125
+    },
+    {
+      "model": "ASCE4",
+      "method": "M1-dynamic",
+      "case_id": 1,
+      "inputs_preserved": true,
+      "archive_close": false,
+      "success_matches_archive": true,
+      "scaled_final_state_difference": 6.8709183491620052E-15,
+      "initial_P_relative_difference": 0,
+      "max_final_stiffness_NRMSE_difference_pp": 6.8278716014447127E-13,
+      "max_final_response_NRMSE_difference_pp": 0.0001068115234375
+    },
+    {
+      "model": "ASCE4",
+      "method": "M2-dynamic",
+      "case_id": 1,
+      "inputs_preserved": true,
+      "archive_close": false,
+      "success_matches_archive": true,
+      "scaled_final_state_difference": 5.077362241108414E-15,
+      "initial_P_relative_difference": 0,
+      "max_final_stiffness_NRMSE_difference_pp": 4.4586556668946287E-13,
+      "max_final_response_NRMSE_difference_pp": 7.62939453125E-5
+    },
+    {
+      "model": "ASCE4",
+      "method": "M12-fixed",
+      "case_id": 1,
+      "inputs_preserved": true,
+      "archive_close": false,
+      "success_matches_archive": true,
+      "scaled_final_state_difference": 2.4287766740805844E-15,
+      "initial_P_relative_difference": 0,
+      "max_final_stiffness_NRMSE_difference_pp": 2.227107387398064E-13,
+      "max_final_response_NRMSE_difference_pp": 0.00018310546875
+    },
+    {
+      "model": "ASCE4",
+      "method": "M12-dynamic",
+      "case_id": 1,
+      "inputs_preserved": true,
+      "archive_close": false,
+      "success_matches_archive": true,
+      "scaled_final_state_difference": 1.989350844608905E-15,
+      "initial_P_relative_difference": 0,
+      "max_final_stiffness_NRMSE_difference_pp": 1.5265566588595902E-13,
+      "max_final_response_NRMSE_difference_pp": 0.0001220703125
+    }
+  ],
+  "single_case_plot_test_case_id": 1,
+  "source_algorithm_recovery_check_passed": true,
+  "plotting_smoke_test_executed_separately": true,
+  "full_100_case_campaign_rerun": false
+}

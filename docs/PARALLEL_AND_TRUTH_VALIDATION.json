@@ -1,0 +1,13 @@
+{
+  "MATLAB_version": "23.2.0.2515942 (R2023b) Update 7",
+  "ode45_expm_max_absolute_differences": [
+    1.2990402143190326E-12,
+    3.1730505375970885E-10,
+    6.7944535969699515E-8
+  ],
+  "workers": 1,
+  "parallel_tested": false,
+  "serial_cases_passed": 2,
+  "resume_passed": true,
+  "noise_std_for_test": 0.0123
+}

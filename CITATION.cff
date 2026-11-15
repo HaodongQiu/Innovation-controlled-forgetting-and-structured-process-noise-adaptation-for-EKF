@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying manuscript and the structural-data references in docs/REFERENCES.bib."
+type: software
+title: "Adaptive EKF for joint structural response and stiffness estimation"
+version: 1.0.0
+date-released: 2026-11-15
+authors:
+  - family-names: Qiu
+    given-names: Haodong
+  - family-names: Ghisi
+    given-names: Aldo
+  - family-names: Mariani
+    given-names: Stefano
+preferred-citation:
+  type: unpublished
+  title: "Innovation-controlled forgetting and structured process-noise adaptation for joint state–stiffness estimation in structural dynamics"
+  authors:
+    - family-names: Qiu
+      given-names: Haodong
+    - family-names: Ghisi
+      given-names: Aldo
+    - family-names: Mariani
+      given-names: Stefano

@@ -1,0 +1,69 @@
+function summary = summarize_results(folder)
+%SUMMARIZE_RESULTS Rebuild CSV/JSON/Markdown summaries without running filters.
+files=result_files(folder);assert(~isempty(files),'No finalized cases in %s.',folder);
+rows=struct([]);signatures={};
+for k=1:numel(files)
+ saved=load(fullfile(files(k).folder,files(k).name),'result');r=saved.result;
+ signatures{end+1}=r.signature; %#ok<AGROW>
+ row=struct('case_id',r.case_id,'method',r.method.id,'completed',r.completed, ...
+  'success',r.success,'mean_snr_db',NaN,'stiffness_nrmse_pct',NaN, ...
+  'early_acceleration_nrmse_pct',NaN,'final_displacement_nrmse_pct',NaN, ...
+  'final_velocity_nrmse_pct',NaN,'final_acceleration_nrmse_pct',NaN, ...
+  'final_displacement_rmse_m',NaN,'final_velocity_rmse_mps',NaN, ...
+  'final_acceleration_rmse_mps2',NaN,'failure_message',r.failure_message);
+ if r.success
+  n=numel(r.true_k);w=find(strcmp(r.cfg.window_names,'final_10_seconds'));
+  early=find(strcmp(r.cfg.window_names,'early_post_damage'));
+  assert(r.metrics.count(w)==10001,'Final-ten-second window changed.');
+  row.mean_snr_db=mean(r.snr_db);
+  row.stiffness_nrmse_pct=mean(r.metrics.stiffness_window_rmse_pct(:,w));
+  row.early_acceleration_nrmse_pct=mean(r.metrics.normalized_rmse_pct(2*n+1:3*n,early));
+  fields={'displacement','velocity','acceleration'};units={'m','mps','mps2'};
+  for c=1:3
+   take=(c-1)*n+(1:n);
+   row.(['final_' fields{c} '_nrmse_pct'])=mean(r.metrics.normalized_rmse_pct(take,w));
+   row.(['final_' fields{c} '_rmse_' units{c}])=sqrt(sum(r.metrics.error_energy(take,w))/(n*r.metrics.count(w)));
+  end
+ end
+ if isempty(rows),rows=row;else,rows(end+1)=row;end %#ok<AGROW>
+end
+assert(numel(unique(signatures))==1,'Results from different code/data versions are mixed.');
+cases=struct2table(rows);writetable(cases,fullfile(folder,'CASE_METRICS.csv'));
+methods=paper_methods;means=struct([]);
+for k=1:numel(methods)
+ take=strcmp(cases.method,methods(k).id);if ~any(take),continue;end
+ ok=take & cases.success;entry=struct('method',methods(k).id, ...
+  'completed',sum(cases.completed(take)),'successful',sum(ok),'failed',sum(take & ~cases.success), ...
+  'stiffness_nrmse_pct',mean(cases.stiffness_nrmse_pct(ok)), ...
+  'stiffness_case_p95_pct',sample_percentile(cases.stiffness_nrmse_pct(ok),95), ...
+  'early_acceleration_nrmse_pct',mean(cases.early_acceleration_nrmse_pct(ok)), ...
+  'final_displacement_nrmse_pct',mean(cases.final_displacement_nrmse_pct(ok)), ...
+  'final_velocity_nrmse_pct',mean(cases.final_velocity_nrmse_pct(ok)), ...
+  'final_acceleration_nrmse_pct',mean(cases.final_acceleration_nrmse_pct(ok)), ...
+  'final_displacement_rmse_m',mean(cases.final_displacement_rmse_m(ok)), ...
+  'final_velocity_rmse_mps',mean(cases.final_velocity_rmse_mps(ok)), ...
+  'final_acceleration_rmse_mps2',mean(cases.final_acceleration_rmse_mps2(ok)), ...
+  'mean_snr_db',mean(cases.mean_snr_db(ok)));
+ if isempty(means),means=entry;else,means(end+1)=entry;end %#ok<AGROW>
+end
+writetable(struct2table(means),fullfile(folder,'METHOD_SUMMARY.csv'));
+summary=struct('complete',all([means.completed]==100),'completed',sum([means.completed]), ...
+ 'successful',sum([means.successful]),'failed',sum([means.failed]), ...
+ 'expected',100*numel(means),'model_id',r.model_id,'generator',r.generator, ...
+ 'noise_std_mps2',r.cfg.noise_std,'signature',r.signature,'methods',means);
+f=fopen(fullfile(folder,'summary.json'),'w');assert(f>=0);cleanup=onCleanup(@()fclose(f));
+fprintf(f,'%s\n',jsonencode(summary,PrettyPrint=true));clear cleanup
+f=fopen(fullfile(folder,'RESULTS_REPORT.md'),'w');assert(f>=0);cleanup=onCleanup(@()fclose(f));
+fprintf(f,'# %s: %s, noise SD %.4g m/s^2\n\n',r.model_id,r.generator,r.cfg.noise_std);
+fprintf(f,'%d finalized outcomes: %d successful, %d failed. Numerical divergence is a completed failed comparison.\n\n',summary.completed,summary.successful,summary.failed);
+fprintf(f,'Accuracy averages use successful cases only. Fixed factors are 0.80 for response and stiffness; dynamic variants use response factor 0.95.\n\n');
+fprintf(f,'| Method | Successful | Final 10 s stiffness NRMSE (%%) | Early acceleration NRMSE (%%) | Final u NRMSE (%%) | Final v NRMSE (%%) | Final a NRMSE (%%) |\n');
+fprintf(f,'|---|---:|---:|---:|---:|---:|---:|\n');
+for k=1:numel(means)
+ q=means(k);fprintf(f,'| %s | %d/%d | %.2f | %.2f | %.2f | %.2f | %.2f |\n', ...
+  q.method,q.successful,q.completed,q.stiffness_nrmse_pct,q.early_acceleration_nrmse_pct, ...
+  q.final_displacement_nrmse_pct,q.final_velocity_nrmse_pct,q.final_acceleration_nrmse_pct);
+end
+fprintf(f,'\nFinal stiffness NRMSE uses the true post-damage stiffness. Response NRMSE divides each channel error RMS by its true-channel RMS in the same window, then averages channels and cases. See docs/METRICS.md.\n');
+fprintf('Summary written: %s (%d successful, %d failed).\n',folder,summary.successful,summary.failed);
+end

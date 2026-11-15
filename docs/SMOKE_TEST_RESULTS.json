@@ -1,0 +1,66 @@
+{
+  "MATLAB_version": "23.2.0.2515942 (R2023b) Update 7",
+  "short_tests": [
+    {
+      "model": "Pirelli39",
+      "method": "U-fixed",
+      "passed": true
+    },
+    {
+      "model": "Pirelli39",
+      "method": "U-dynamic",
+      "passed": true
+    },
+    {
+      "model": "Pirelli39",
+      "method": "M1-dynamic",
+      "passed": true
+    },
+    {
+      "model": "Pirelli39",
+      "method": "M2-dynamic",
+      "passed": true
+    },
+    {
+      "model": "Pirelli39",
+      "method": "M12-fixed",
+      "passed": true
+    },
+    {
+      "model": "Pirelli39",
+      "method": "M12-dynamic",
+      "passed": true
+    },
+    {
+      "model": "ASCE4",
+      "method": "U-fixed",
+      "passed": true
+    },
+    {
+      "model": "ASCE4",
+      "method": "U-dynamic",
+      "passed": true
+    },
+    {
+      "model": "ASCE4",
+      "method": "M1-dynamic",
+      "passed": true
+    },
+    {
+      "model": "ASCE4",
+      "method": "M2-dynamic",
+      "passed": true
+    },
+    {
+      "model": "ASCE4",
+      "method": "M12-fixed",
+      "passed": true
+    },
+    {
+      "model": "ASCE4",
+      "method": "M12-dynamic",
+      "passed": true
+    }
+  ],
+  "full_campaign_rerun": false
+}
